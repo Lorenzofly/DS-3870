@@ -3,5 +3,5 @@ $('#btsTest').click(function() {
     let decHours = $('#txtHours').val();
     let decRate = $('#txtPayRate').val();
     console.log(decHours * decRate);
-    decHours.console();
 });
+$('#txtPayRate')
