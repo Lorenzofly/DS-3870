@@ -1,3 +1,10 @@
+$.getJson("https://www.swollenhippo.com/getEmployeesByAPIKey.)
+    console.log(result);
+    $.each(result,function(i,person){
+        console.log(person.FirstName);
+
+
+    }
 $('#btnTest').click(function() {
     const decTaxRate = .0925;
     let decHours = $('#txtHours').val();
