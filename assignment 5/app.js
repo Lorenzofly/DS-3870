@@ -1,3 +1,4 @@
+var arrEmployees;
 $.getJSON("https://www.swollenhippo.com/getEmployeesByAPIKey.php?APIKey=Mickey2021!", function(result){
     console.log(result);
     arrEmployees = result;
@@ -9,7 +10,7 @@ $.getJSON("https://www.swollenhippo.com/getEmployeesByAPIKey.php?APIKey=Mickey20
 function buildEmployeeCard(){
     $.each(arrEmployees,function(i,person){
         if(person.FirstName != 'John'){
-            let strHTML = '<div class="card col-3 mt-5">';
+            let strHTML = '<div class="card col-3 mt-5 ml-3">';
             strHTML += '<img src="images/profile.png" alt="Profile Image" style="margin:auto; max-width:100%;">';
             strHTML += '<h3 class="text-center"><a href="mailto:' + person.Email + '">' + person.FirstName + ' ' + person.LastName + '</a></h3>';
             strHTML += '<h4 class="text-center">' + person.Postion +'</h4>';
