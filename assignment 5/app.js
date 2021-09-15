@@ -25,7 +25,7 @@ function buildEmployeeCard(){
             strHTML += '</div>';
             strHTML += '<div class="form-group">';
             strHTML += '<label class="mr-2>Total Pay</label>';
-            strHTML += '<input class="txtTotalPay" enabled>';
+            strHTML += '<input class="txtTotalPay">';
             strHTML += '</div>';
             
             strHTML += '<button class="btn btn-primary btn-block btnCalculatePay">Calculate Pay</button>'
