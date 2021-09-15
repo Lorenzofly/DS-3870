@@ -24,7 +24,7 @@ function buildEmployeeCard(){
             strHTML += '<input class="txtHours">';
             strHTML += '</div>';
             strHTML += '<div class="form-group">';
-            strHTML += '<label class="mr-2>Total Pay</label>';
+            strHTML += '<label class="mr-2">Total Pay</label>';
             strHTML += '<input class="txtTotalPay">';
             strHTML += '</div>';
             
@@ -35,7 +35,9 @@ function buildEmployeeCard(){
         }
     });
 }
-
+function calculatePay(decHoursWorked, decPayRate){
+    return decHoursWorked * decPayRate;
+}
 
 $(document).on('click','.btnCalculatePay',function() {
     let decHours = $(this).closest('.card').find('.txthours').txt();
