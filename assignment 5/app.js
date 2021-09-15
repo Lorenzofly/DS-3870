@@ -2,12 +2,9 @@ $.getJSON("https://www.swollenhippo.com/getEmployeesByAPIKey.php?APIKey=Mickey20
     console.log(result);
     arrEmployees = result;
     buildEmployeeCard();
-    $.each(result,function(i,person){
-        console.log(person.FirstName);
-        console.log(person.FirstName + ' ' + person.LastName);
-        $('#txtEmail').val(person.Email);
+
+
     })
-})
 
 function buildEmployeeCard(){
     $.each(arrEmployees,function(i,person){
@@ -25,7 +22,7 @@ function buildEmployeeCard(){
             strHTML += '</div>';
             strHTML += '<div class="form-group">';
             strHTML += '<label class="mr-2">Total Pay</label>';
-            strHTML += '<input class="txtTotalPay">';
+            strHTML += '<input class="txtTotalPay" disabled>';
             strHTML += '</div>';
             
             strHTML += '<button class="btn btn-primary btn-block btnCalculatePay">Calculate Pay</button>'
@@ -35,12 +32,12 @@ function buildEmployeeCard(){
         }
     });
 }
-function calculatePay(decHoursWorked, decPayRate){
-    return decHoursWorked * decPayRate;
-}
+
 
 $(document).on('click','.btnCalculatePay',function() {
-    let decHours = $(this).closest('.card').find('.txthours').txt();
-    let decRate = $(this).closest('.card').find('.txtHourlyRate').txt().split(': '[1]);
-    $(this).closest('.card').find('.txtTotalPay').txt(calculatePay(decHours.decRate));
+    let decHours = $(this).closest('.card').find('.txthours').val();
+    let decRate = $(this).closest('.card').find('.txtHourlyRate').txt().split(': ')[1];
+    $(this).closest('.card').find('.txtTotalPay').txt(decHours * decRate);
+   
+    
 });
