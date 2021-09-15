@@ -10,6 +10,7 @@ function buildEmployeeCard(){
     $.each(arrEmployees,function(i,person){
         if(person.FirstName != 'John'){
             let strHTML = '<div class="card col-3 mt-5">';
+            strHTML += '<img src="images/profile.png" alt="Profile Image" style="margin:auto; max-width:100%;">';
             strHTML += '<h3 class="text-center"><a href="mailto:' + person.Email + '">' + person.FirstName + ' ' + person.LastName + '</a></h3>';
             strHTML += '<h4 class="text-center">' + person.Postion +'</h4>';
             strHTML += '<h4 class="mt-3">Profile Details</h4>';
@@ -36,8 +37,8 @@ function buildEmployeeCard(){
 
 $(document).on('click','.btnCalculatePay',function() {
     let decHours = $(this).closest('.card').find('.txthours').val();
-    let decRate = $(this).closest('.card').find('.txtHourlyRate').txt().split(': ')[1];
-    $(this).closest('.card').find('.txtTotalPay').txt(decHours * decRate);
+    let decRate = $(this).closest('.card').find('.txtHourlyRate').val().split(': ')[1];
+    $(this).closest('.card').find('.txtTotalPay').val(decHours * decRate);
    
     
 });
