@@ -17,47 +17,28 @@ function buildEmployeeCard(){
             strHTML += '<h4 class="text-center">' + person.Postion +'</h4>';
             strHTML += '<h4 class="mt-3">Profile Details</h4>';
             strHTML += '<p>Hire Date: '  + person.HireDate + '</p>';
-            strHTML += '<p>Hourly Rate: ' + person.HourlyRate + '</p>';
-            strHTML += '<h4 class="mt-3">Pay Calculations</h4>'
-            strHTML += '<p>Assignment:  Something hall</p>';
+            strHTML += '<p class="txtHourlyRate" data-rate="' + person.HourlyRate + '">Hourly Rate: ' + person.HourlyRate + '</p>';
+            strHTML += '<h4 class="mt-3">Pay Calculations</h4>';
             strHTML += '<div class="form-group mb-0">';
             strHTML += '<label class="mr-2">Hours Worked</label>';
-            strHTML +='input class="txtHours">';
+            strHTML += '<input class="txtHours">';
             strHTML += '</div>';
             strHTML += '<div class="form-group">';
             strHTML += '<label class="mr-2>Total Pay</label>';
-            strHTML += '<input class="txtTotalPay" disabled';
-            strHTML += '<button class="btn btn-primary btn-block btnCalculatePay">Calculate Pay</button>'
+            strHTML += '<input class="txtTotalPay" disabled>';
             strHTML += '</div>';
+            
+            strHTML += '<button class="btn btn-primary btn-block btnCalculatePay">Calculate Pay</button>'
+
             strHTML += '</div>';
             $('#divEmployee').append(strHTML);
         }
-        
     });
 }
 
-$('#btnTest').click(function() {
-    const decTaxRate = .0925;
-    let decHours = $('#txtHours').val();
-    let decRate = $('#txtPayRate').val();
-    console.log(decHours * decRate);
-});
-$('#cboEmployeeType').change(function() {
-    if($('#cboEmployeeType').val() == 'FULL'){
-     
-        $('#divHours').addClass('d-none');
-    }else {
-        $('#divHours').removeClass('d-none').slideDown();
-    }
-})
-
-function calculatePay(decHoursWorked, decPayRate){
-    return decHoursWorked * decPayRate;
-}
 
 $(document).on('click','.btnCalculatePay',function() {
-    calculatePay($this);
-    let decHours = $(this).closest('card').find('.txthours').val();
-    let decRate = $(this).closest('card').find('.txtHourlyRate').val().split(': '[1]);
-    $(this).closest('card').find('txtTotalPay').val(calculatePay(decHours.decRate));
-})
+    let decHours = $(this).closest('.card').find('.txthours').txt();
+    let decRate = $(this).closest('.card').find('.txtHourlyRate').txt().split(': '[1]);
+    $(this).closest('.card').find('.txtTotalPay').txt(calculatePay(decHours.decRate));
+});
