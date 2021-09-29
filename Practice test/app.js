@@ -45,7 +45,10 @@ $(document).on('click','.btnCalculatePay',function() {
     let decRate = $(this).closest('card').find('txtHourlyWage').txt().split(': ')[1];
     $(this).closest('card').find('txtGoalPay').txt(decHours * decRate);
 });
-
+$(document).on('click','#btnCalculatePay',function(){
+    $('#tblEmployees').slideToggle();
+    $('#divEmployee').slideToggle();
+})
 
 
 
